@@ -8,14 +8,14 @@ Vue.use(VueRouter);
 const app = new Vue({
     vuetify: new Vuetify({
         icons: {
-            iconfont: 'mdi', // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4'
+            iconfont: "mdi", // "mdi" || "mdiSvg" || "md" || "fa" || "fa4"
         },
     }),
     router:new VueRouter({
         routes:[
             { path: "/" },
         ],
-        mode:"hash",
+        mode:"history", //"hash"
         scrollBehavior (to, from, savedPosition) {
             if (savedPosition) {
                 return new Promise((resolve, reject) => {
