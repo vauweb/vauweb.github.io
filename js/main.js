@@ -13,8 +13,8 @@ const app = new Vue({
     }),
     router:new VueRouter({
         routes:[
-            { path: "*", component:()=>import("./pages/404.js")},
             { path: "/" },
+            { path: "/*", component:()=>import("./pages/404.js")},
         ],
         mode:"history", //"hash"
         scrollBehavior (to, from, savedPosition) {
