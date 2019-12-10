@@ -13,6 +13,7 @@ const app = new Vue({
     }),
     router:new VueRouter({
         routes:[
+            { path: "*", component:()=>import("./page/404.js")}
             { path: "/" },
         ],
         mode:"history", //"hash"
