@@ -13,7 +13,6 @@
         created() {
         },
         mounted() {
-            console.log(this);
         },
         beforeUpdate() {
         },
