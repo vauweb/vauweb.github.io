@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1682d08a-ef8b-48f2-bd7e-ec92d82f8b67" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/js/app.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/components/item.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/routes/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/pages/404.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/404.js" afterDir="false" />
-    </list>
+    <list default="true" id="1682d08a-ef8b-48f2-bd7e-ec92d82f8b67" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,7 +55,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1582784718666</updated>
-      <workItem from="1582784720273" duration="12573000" />
+      <workItem from="1582784720273" duration="12935000" />
     </task>
     <servers />
   </component>
