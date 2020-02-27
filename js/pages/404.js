@@ -4,5 +4,5 @@ export default {
         };
     },
     computed:{},
-    template:`<h1>404: NOT FOUND</h1>`
+    template:`<v-container fluid><h1>404: NOT FOUND</h1></v-container>`
 }

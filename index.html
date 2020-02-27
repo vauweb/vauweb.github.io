@@ -4,17 +4,28 @@
     <meta charset="UTF-8">
     <title>vauweb</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <script>
+        let redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+            history.replaceState(null, null, redirect);
+        }
+    </script>
+    <base href="/" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify@2.2.15/dist/vuetify.min.css" integrity="sha256-94PViE37w3wLQ2djaddxABYzeX5Vhcp5CxQMiYkHUuo=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@4.9.95/css/materialdesignicons.min.css" integrity="sha256-orhFmLdAikn1cv90PcWIa93VOQx4tAQWA32hnBP40M4=" crossorigin="anonymous">
+
+<!--    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js" integrity="sha256-ngFW3UnAN0Tnm76mDuu7uUtYEcG3G5H1+zioJw3t+68=" crossorigin="anonymous"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js" integrity="sha256-NSuqgY2hCZJUN6hDMFfdxvkexI7+iLxXQbL540RQ/c4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-router@3.1.6/dist/vue-router.min.js" integrity="sha256-B8zvQ+y1lIQkcm+EJyCis+7AgsnzaTCBAHgkrPFQr9A=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuex@3.1.2/dist/vuex.min.js" integrity="sha256-LfE9mPMjeOg3dTn1sESY2Xvdbq7gAhONtkxacnr7FSA=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.15/dist/vuetify.min.js" integrity="sha256-jjZIy/OAjulvY8uZElhFm7L3JiumkJgpzZMNMA3IfRA=" crossorigin="anonymous"></script>
+    <script src="./js/vendors/httpVueLoader.js"></script>
+
 </head>
 <body>
     <div id="app"></div>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@4.9.95/css/materialdesignicons.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify@2.2.15/dist/vuetify.min.css" crossorigin="anonymous">
-    <link href="./css/main.css" rel="stylesheet" >
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-router@3.1.6/dist/vue-router.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.15/dist/vuetify.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/http-vue-loader@1.4.2/src/httpVueLoader.min.js"></script>
     <script type="module" src="./js/main.js"></script>
 </body>
 </html>

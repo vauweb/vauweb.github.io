@@ -1,22 +1,16 @@
-let redirect = sessionStorage.redirect;
-delete sessionStorage.redirect;
-if (redirect && redirect != location.href) {
-    history.replaceState(null, null, redirect);
-}
+import routes from "./routes/routes.js";
+import store from "./store/index.js";
 
-Vue.use(VueRouter);
 const app = new Vue({
     vuetify: new Vuetify({
         icons: {
             iconfont: "mdi", // "mdi" || "mdiSvg" || "md" || "fa" || "fa4"
         },
     }),
+    store,
     router:new VueRouter({
-        routes:[
-            { path: "/" },
-            { path: "/*", component:()=>import("./pages/404.js")},
-        ],
-        mode:"history", //"hash"
+        routes,
+        mode:"history", //"history", "hash"
         scrollBehavior (to, from, savedPosition) {
             if (savedPosition) {
                 return new Promise((resolve, reject) => {
@@ -33,27 +27,8 @@ const app = new Vue({
         }
     }),
     el: '#app',
-    components:{        
+    components:{
+        'wm-app': httpVueLoader('/js/app.vue')
     },
-    data: {
-      drawer:false
-    },
-    methods:{},
-    computed:{},
-    watch:{},
-    template:`<v-app dark>
-    <v-navigation-drawer app v-model="drawer" disable-resize-watcher>
-        <v-toolbar dense>
-            <v-btn icon title="Закрыть меню" @click.stop="drawer = !drawer"><v-icon>mdi-close</v-icon></v-btn>
-        </v-toolbar>
-    </v-navigation-drawer>
-    <v-app-bar app dense>
-        <v-btn icon title="Открыть меню" @click.stop="drawer = !drawer"><v-icon>mdi-menu</v-icon></v-btn>
-    </v-app-bar>   
-    <v-content>
-        <v-container fluid>
-            <router-view />
-        </v-container>
-    </v-content>
-</v-app>`
+    template:`<wm-app/>`,
 });
