@@ -15,6 +15,26 @@
                         <v-list-item-title>/page2</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
+                <v-list-item to="/project/template/0">
+                    <v-list-item-content>
+                        <v-list-item-title>/template</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item to="/project/template/0/page1">
+                    <v-list-item-content>
+                        <v-list-item-title>/template/page1</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item to="/project/template/0/page2">
+                    <v-list-item-content>
+                        <v-list-item-title>/template/page2</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item to="/project/template/0/page11">
+                    <v-list-item-content>
+                        <v-list-item-title>/template/page11</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
             </v-list>
         </v-navigation-drawer>
         <v-app-bar app dense>

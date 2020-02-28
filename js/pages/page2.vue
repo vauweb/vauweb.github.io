@@ -11,7 +11,6 @@
     export default {
         name: "page2",
         components: {
-            'st-item': httpVueLoader('/js/components/item.vue')
         },
         beforeCreate() {
         },

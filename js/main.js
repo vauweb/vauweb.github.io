@@ -1,6 +1,14 @@
 import routes from "./routes/routes.js";
 import store from "./store/index.js";
+// import item from "/js/components/item.vue";
+fetch("/js/components/item.vue").then(res=>res.text()).then(item=>{
+    let t = document.createElement("template");
+    t.innerHTML = item;
+    console.log(t);
+});
 
+
+Vue.component("stItem", httpVueLoader('/js/components/item.vue'));
 const app = new Vue({
     vuetify: new Vuetify({
         icons: {

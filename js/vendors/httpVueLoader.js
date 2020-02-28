@@ -8,7 +8,7 @@
 })(this, function factory() {
     'use strict';
     var scopeIndex = 0;
-
+    window._httpVueLoaderCache = window._httpVueLoaderCache || [];
     StyleContext.prototype = {
 
         withBase: function (callback) {
@@ -436,23 +436,32 @@
     httpVueLoader.httpRequest = function (url) {
 
         return new Promise(function (resolve, reject) {
+            let cache = window._httpVueLoaderCache.find(i=>i.url == url);
+            if(cache){
+                resolve(cache.responseText);
+            }else {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', url);
+                xhr.responseType = 'text';
 
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', url);
-            xhr.responseType = 'text';
+                xhr.onreadystatechange = function () {
 
-            xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
 
-                if (xhr.readyState === 4) {
+                        if (xhr.status >= 200 && xhr.status < 300) {
+                            window._httpVueLoaderCache.push({
+                                url,
+                                responseText: xhr.responseText
+                            });
+                            resolve(xhr.responseText);
+                        }else {
+                            reject(xhr.status);
+                        }
+                    }
+                };
 
-                    if (xhr.status >= 200 && xhr.status < 300)
-                        resolve(xhr.responseText);
-                    else
-                        reject(xhr.status);
-                }
-            };
-
-            xhr.send(null);
+                xhr.send(null);
+            }
         });
     };
 

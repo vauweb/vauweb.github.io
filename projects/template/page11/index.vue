@@ -1,17 +1,15 @@
 <template>
     <v-container fluid fill-height class="justify-center">
-        <v-card width="600" height="400" class="qwe">
+        <v-card width="600" height="400">
             {{$options.name}}
-            <st-item></st-item>
         </v-card>
     </v-container>
 </template>
 
 <script>
     export default {
-        name: "index",
-        components: {
-        },
+        name: "templatePage11Index",
+        components: {},
         beforeCreate() {
         },
         created() {
@@ -40,7 +38,5 @@
 </script>
 
 <style scoped>
-    .qwe{
-        background-color: crimson;
-    }
+
 </style>
